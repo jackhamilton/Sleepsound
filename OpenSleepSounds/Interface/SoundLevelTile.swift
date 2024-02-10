@@ -47,6 +47,9 @@ struct SoundLevelTile: View {
                 .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                 .onChange(of: volume, {
                     volumePublisher?.send((sound.soundName, volume))
+                    if active {
+                        ContentView.soundManager.updateVolume(soundName: sound.soundName, volume: volume)
+                    }
                 })
             
             Text(volume.formatted())
