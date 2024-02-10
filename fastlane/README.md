@@ -39,6 +39,14 @@ Generate certificates
 
 deploy
 
+### ios upload_screenshots
+
+```sh
+[bundle exec] fastlane ios upload_screenshots
+```
+
+upload_screenshots
+
 ### ios release
 
 ```sh

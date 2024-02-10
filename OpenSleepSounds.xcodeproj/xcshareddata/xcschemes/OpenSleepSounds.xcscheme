@@ -51,6 +51,17 @@
                ReferencedContainer = "container:OpenSleepSounds.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E0123F192B777AFA004690DB"
+               BuildableName = "Snapshots.xctest"
+               BlueprintName = "Snapshots"
+               ReferencedContainer = "container:OpenSleepSounds.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

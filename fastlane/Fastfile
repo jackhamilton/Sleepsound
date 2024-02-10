@@ -46,32 +46,28 @@ platform :ios do
     )
   end
 
-  desc "deploy"
-  lane :deploy do
+  desc "release"
+  lane :release do
     setup_ci
     sync_code_signing(
         type: "appstore",
         app_identifier: "com.hamilton.sleepsounds",
         readonly: true
-    )
-    
+    ) 
+    increment_build_number(xcodeproj: "OpenSleepSounds.xcodeproj")
     build_app(scheme: "OpenSleepSounds")
-
+    capture_ios_screenshots(
+        clean: true
+    )
     app_store_connect_api_key(
         is_key_content_base64: true,
         in_house: false
     )
-    upload_to_app_store(
-        force: true,
-        run_precheck_before_submit: false,
-        submit_for_review: false
+    deliver(
+        submit_for_review: false,
+        skip_metadata: true,
+        skip_screenshots: false,
+        skip_binary_upload: false
     )
-  end
-
-  desc "Push a new release build to the App Store"
-  lane :release do
-    increment_build_number(xcodeproj: "OpenSleepSounds.xcodeproj")
-    build_app(scheme: "OpenSleepSounds")
-    upload_to_app_store(skip_metadata: true, skip_screenshots: true)
   end
 end

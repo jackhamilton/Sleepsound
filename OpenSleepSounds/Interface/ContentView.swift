@@ -16,10 +16,21 @@ struct ContentView: View {
     @State var displayingTimePicker: Bool = false
     @State var activeID: UUID = UUID()
     @State var tiles: [PackedTile]
+    @State var buttonIconMode = true
     
     static var soundManager: SoundManager = SoundManager(sounds: [
-        SoundFile(filename: "rain_session_vibe_crc.wav"),
-        SoundFile(filename: "ruido_whitenoise.wav")
+        SoundFile(filename: "rain_session.wav"),
+        SoundFile(filename: "ruido_whitenoise.wav"),
+        SoundFile(filename: "airplane_ambience.wav"),
+        SoundFile(filename: "brownnoise.wav"),
+        SoundFile(filename: "electricfan.wav"),
+        SoundFile(filename: "industrialfan.wav"),
+        SoundFile(filename: "lightrain_small.wav"),
+        SoundFile(filename: "lightrain.wav"),
+        SoundFile(filename: "mediumrain.wav"),
+        SoundFile(filename: "pinknoise.wav"),
+        SoundFile(filename: "restaurant.wav"),
+        SoundFile(filename: "whitenoise.wav")
     ])
     
     init() {
@@ -36,9 +47,29 @@ struct ContentView: View {
             }
         }
         let defaultTiles = [
-            PackedTile(title: "Rain", resources: [
-                SoundResource(text: "Rain", icon: "cloud.rain", soundName: "rain_session_vibe_crc", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "ruido_whitenoise", volume: Volume(percentVolume: 20))
+            PackedTile(title: "Light Rain", resources: [
+                SoundResource(text: "Rain", icon: "cloud.drizzle", soundName: "rain_session", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+            ]),
+            PackedTile(title: "Medium Rain", resources: [
+                SoundResource(text: "Rain", icon: "cloud.rain", soundName: "lightrain_small", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+            ]),
+            PackedTile(title: "Heavy Rain", resources: [
+                SoundResource(text: "Rain", icon: "cloud.heavyrain", soundName: "lightrain", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+            ]),
+            PackedTile(title: "Airplane", resources: [
+                SoundResource(text: "Plane", icon: "airplane", soundName: "airplane_ambience", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+            ]),
+            PackedTile(title: "Fan", resources: [
+                SoundResource(text: "Rain", icon: "fan", soundName: "electricfan", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+            ]),
+            PackedTile(title: "Restaurant", resources: [
+                SoundResource(text: "Rain", icon: "cup.and.saucer", soundName: "restaurant", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
             ])
         ]
         let mergedTiles: [PackedTile] = defaultTiles.map({ tile in
@@ -73,8 +104,12 @@ struct ContentView: View {
                     Button(action: {
                         displayingTimePicker.toggle()
                     }, label: {
-                        Image(systemName: "clock")
-                            .foregroundColor(Theme.text)
+                        if buttonIconMode {
+                            Image(systemName: "clock")
+                                .foregroundColor(Theme.text)
+                        } else {
+                            Text("Timer")
+                        }
                     })
                 }
             }

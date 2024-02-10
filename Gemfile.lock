@@ -30,6 +30,7 @@ GEM
     commander (4.6.0)
       highline (~> 2.0.0)
     declarative (0.0.20)
+    declarative-option (0.1.0)
     digest-crc (0.6.5)
       rake (>= 12.0.0, < 14.0.0)
     domain_name (0.6.20240107)
@@ -207,8 +208,9 @@ PLATFORMS
   x86_64-darwin-23
 
 DEPENDENCIES
+  declarative-option (= 0.1.0)
   dotenv
   fastlane
 
 BUNDLED WITH
-   2.5.3
+   2.5.6

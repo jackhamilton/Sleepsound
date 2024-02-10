@@ -19,6 +19,8 @@
 		E0123F0A2B772E9E004690DB /* restaurant.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFE2B772E9E004690DB /* restaurant.wav */; };
 		E0123F0B2B772E9E004690DB /* lightrain.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFF2B772E9E004690DB /* lightrain.wav */; };
 		E0123F0C2B772E9E004690DB /* industrialfan.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123F002B772E9E004690DB /* industrialfan.wav */; };
+		E0123F252B777B07004690DB /* Snapshots.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0123F152B777A9D004690DB /* Snapshots.swift */; };
+		E0123F262B777B29004690DB /* SnapshotHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0123F112B776C40004690DB /* SnapshotHelper.swift */; };
 		E01BBE0C2B62FCC80040A30C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BBE0B2B62FCC80040A30C /* SoundManager.swift */; };
 		E01BBE0F2B62FFA80040A30C /* SoundResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BBE0E2B62FFA80040A30C /* SoundResource.swift */; };
 		E01BBE112B62FFB20040A30C /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BBE102B62FFB20040A30C /* Volume.swift */; };
@@ -32,13 +34,19 @@
 		E0D32AA32B61B9A7001E6A16 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D32AA22B61B9A7001E6A16 /* Preview Assets.xcassets */; };
 		E0D32AAD2B61B9A7001E6A16 /* OpenSleepSoundsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32AAC2B61B9A7001E6A16 /* OpenSleepSoundsTests.swift */; };
 		E0D32AB72B61B9A7001E6A16 /* OpenSleepSoundsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32AB62B61B9A7001E6A16 /* OpenSleepSoundsUITests.swift */; };
-		E0D32AB92B61B9A7001E6A16 /* OpenSleepSoundsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32AB82B61B9A7001E6A16 /* OpenSleepSoundsUITestsLaunchTests.swift */; };
 		E0D32AC62B61CB88001E6A16 /* SoundPresetTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32AC52B61CB88001E6A16 /* SoundPresetTile.swift */; };
 		E0D32AC82B61CE1D001E6A16 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32AC72B61CE1D001E6A16 /* Theme.swift */; };
 		E0D32ACC2B61DE39001E6A16 /* Timer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32ACB2B61DE39001E6A16 /* Timer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		E0123F202B777AFA004690DB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E0D32A8D2B61B9A3001E6A16 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E0D32A942B61B9A3001E6A16;
+			remoteInfo = OpenSleepSounds;
+		};
 		E0D32AA92B61B9A7001E6A16 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = E0D32A8D2B61B9A3001E6A16 /* Project object */;
@@ -68,6 +76,9 @@
 		E0123EFE2B772E9E004690DB /* restaurant.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = restaurant.wav; sourceTree = "<group>"; };
 		E0123EFF2B772E9E004690DB /* lightrain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lightrain.wav; sourceTree = "<group>"; };
 		E0123F002B772E9E004690DB /* industrialfan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = industrialfan.wav; sourceTree = "<group>"; };
+		E0123F112B776C40004690DB /* SnapshotHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnapshotHelper.swift; path = fastlane/SnapshotHelper.swift; sourceTree = SOURCE_ROOT; };
+		E0123F152B777A9D004690DB /* Snapshots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Snapshots.swift; sourceTree = "<group>"; };
+		E0123F1A2B777AFA004690DB /* Snapshots.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Snapshots.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E01BBE0B2B62FCC80040A30C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		E01BBE0E2B62FFA80040A30C /* SoundResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundResource.swift; sourceTree = "<group>"; };
 		E01BBE102B62FFB20040A30C /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
@@ -84,7 +95,6 @@
 		E0D32AAC2B61B9A7001E6A16 /* OpenSleepSoundsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSleepSoundsTests.swift; sourceTree = "<group>"; };
 		E0D32AB22B61B9A7001E6A16 /* OpenSleepSoundsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OpenSleepSoundsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D32AB62B61B9A7001E6A16 /* OpenSleepSoundsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSleepSoundsUITests.swift; sourceTree = "<group>"; };
-		E0D32AB82B61B9A7001E6A16 /* OpenSleepSoundsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSleepSoundsUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E0D32AC52B61CB88001E6A16 /* SoundPresetTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPresetTile.swift; sourceTree = "<group>"; };
 		E0D32AC72B61CE1D001E6A16 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		E0D32ACB2B61DE39001E6A16 /* Timer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timer.swift; sourceTree = "<group>"; };
@@ -92,6 +102,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		E0123F172B777AFA004690DB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0D32A922B61B9A3001E6A16 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -193,6 +210,7 @@
 				E0D32A952B61B9A3001E6A16 /* OpenSleepSounds.app */,
 				E0D32AA82B61B9A7001E6A16 /* OpenSleepSoundsTests.xctest */,
 				E0D32AB22B61B9A7001E6A16 /* OpenSleepSoundsUITests.xctest */,
+				E0123F1A2B777AFA004690DB /* Snapshots.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -230,8 +248,9 @@
 		E0D32AB52B61B9A7001E6A16 /* OpenSleepSoundsUITests */ = {
 			isa = PBXGroup;
 			children = (
+				E0123F112B776C40004690DB /* SnapshotHelper.swift */,
 				E0D32AB62B61B9A7001E6A16 /* OpenSleepSoundsUITests.swift */,
-				E0D32AB82B61B9A7001E6A16 /* OpenSleepSoundsUITestsLaunchTests.swift */,
+				E0123F152B777A9D004690DB /* Snapshots.swift */,
 			);
 			path = OpenSleepSoundsUITests;
 			sourceTree = "<group>";
@@ -239,6 +258,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		E0123F192B777AFA004690DB /* Snapshots */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E0123F222B777AFB004690DB /* Build configuration list for PBXNativeTarget "Snapshots" */;
+			buildPhases = (
+				E0123F162B777AFA004690DB /* Sources */,
+				E0123F172B777AFA004690DB /* Frameworks */,
+				E0123F182B777AFA004690DB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E0123F212B777AFA004690DB /* PBXTargetDependency */,
+			);
+			name = Snapshots;
+			productName = Snapshots;
+			productReference = E0123F1A2B777AFA004690DB /* Snapshots.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		E0D32A942B61B9A3001E6A16 /* OpenSleepSounds */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = E0D32ABC2B61B9A7001E6A16 /* Build configuration list for PBXNativeTarget "OpenSleepSounds" */;
@@ -302,9 +339,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1520;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					E0123F192B777AFA004690DB = {
+						CreatedOnToolsVersion = 15.2;
+						TestTargetID = E0D32A942B61B9A3001E6A16;
+					};
 					E0D32A942B61B9A3001E6A16 = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -337,11 +378,19 @@
 				E0D32A942B61B9A3001E6A16 /* OpenSleepSounds */,
 				E0D32AA72B61B9A7001E6A16 /* OpenSleepSoundsTests */,
 				E0D32AB12B61B9A7001E6A16 /* OpenSleepSoundsUITests */,
+				E0123F192B777AFA004690DB /* Snapshots */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		E0123F182B777AFA004690DB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0D32A932B61B9A3001E6A16 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -380,6 +429,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		E0123F162B777AFA004690DB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E0123F252B777B07004690DB /* Snapshots.swift in Sources */,
+				E0123F262B777B29004690DB /* SnapshotHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		E0D32A912B61B9A3001E6A16 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -410,7 +468,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E0D32AB92B61B9A7001E6A16 /* OpenSleepSoundsUITestsLaunchTests.swift in Sources */,
 				E0D32AB72B61B9A7001E6A16 /* OpenSleepSoundsUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -418,6 +475,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		E0123F212B777AFA004690DB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E0D32A942B61B9A3001E6A16 /* OpenSleepSounds */;
+			targetProxy = E0123F202B777AFA004690DB /* PBXContainerItemProxy */;
+		};
 		E0D32AAA2B61B9A7001E6A16 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = E0D32A942B61B9A3001E6A16 /* OpenSleepSounds */;
@@ -431,6 +493,57 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		E0123F232B777AFB004690DB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VQGZ978Q6B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.sleepsound.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenSleepSounds;
+			};
+			name = Debug;
+		};
+		E0123F242B777AFB004690DB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VQGZ978Q6B;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.sleepsound.Snapshots;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SDKROOT = iphoneos;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = OpenSleepSounds;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
 		E0D32ABA2B61B9A7001E6A16 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -488,6 +601,7 @@
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -543,6 +657,7 @@
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
+				SUPPORTED_PLATFORMS = "iphonesimulator iphoneos";
 				SWIFT_COMPILATION_MODE = wholemodule;
 			};
 			name = Release;
@@ -571,12 +686,11 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.sleepsounds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -615,12 +729,11 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.sleepsounds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -645,12 +758,13 @@
 				DEVELOPMENT_TEAM = VQGZ978Q6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.LiveLedger.OpenSleepSoundsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -668,12 +782,13 @@
 				DEVELOPMENT_TEAM = VQGZ978Q6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.LiveLedger.OpenSleepSoundsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -690,12 +805,13 @@
 				DEVELOPMENT_TEAM = VQGZ978Q6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.LiveLedger.OpenSleepSoundsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -712,12 +828,13 @@
 				DEVELOPMENT_TEAM = VQGZ978Q6B;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
-				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MACOSX_DEPLOYMENT_TARGET = "$(RECOMMENDED_MACOSX_DEPLOYMENT_TARGET)";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.LiveLedger.OpenSleepSoundsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -728,6 +845,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		E0123F222B777AFB004690DB /* Build configuration list for PBXNativeTarget "Snapshots" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E0123F232B777AFB004690DB /* Debug */,
+				E0123F242B777AFB004690DB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		E0D32A902B61B9A3001E6A16 /* Build configuration list for PBXProject "OpenSleepSounds" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
