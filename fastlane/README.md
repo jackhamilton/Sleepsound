@@ -37,7 +37,15 @@ Generate certificates
 [bundle exec] fastlane ios release
 ```
 
-release
+Release the app to app store connect
+
+### ios release_without_screenshots
+
+```sh
+[bundle exec] fastlane ios release_without_screenshots
+```
+
+Release to app store connect without taking screenshots
 
 ----
 

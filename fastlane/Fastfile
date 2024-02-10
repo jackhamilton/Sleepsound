@@ -46,7 +46,7 @@ platform :ios do
     )
   end
 
-  desc "release"
+  desc "Release the app to app store connect"
   lane :release do
     setup_ci
     sync_code_signing(
@@ -73,7 +73,32 @@ platform :ios do
         submit_for_review: false,
         skip_metadata: true,
         skip_screenshots: false,
-        skip_binary_upload: false
+        skip_binary_upload: false,
+        run_precheck_before_submit: false
     )
   end
+
+  desc "Release to app store connect without taking screenshots"
+  lane :release_without_screenshots do
+    setup_ci
+    sync_code_signing(
+        type: "appstore",
+        app_identifier: "com.hamilton.sleepsounds",
+        readonly: true
+    )
+    increment_build_number(xcodeproj: "OpenSleepSounds.xcodeproj")
+    build_app(scheme: "OpenSleepSounds")
+    app_store_connect_api_key(
+        is_key_content_base64: true,
+        in_house: false
+    )
+    deliver(
+        submit_for_review: false,
+        skip_metadata: true,
+        skip_screenshots: true,
+        skip_binary_upload: false,
+        run_precheck_before_submit: false
+    )
+  end
+
 end
