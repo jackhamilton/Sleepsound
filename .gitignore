@@ -22,6 +22,9 @@ DerivedData/
 *.perspectivev3
 !default.perspectivev3
 
+## Mac
+*.DS_Store
+
 ## Obj-C/Swift specific
 *.hmap
 
@@ -81,7 +84,8 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
-
+fastlane/.env.default
+fastlane/screenshots/screenshots.html
 # Code Injection
 #
 # After new code Injection tools there's a generated folder /iOSInjectionProject
