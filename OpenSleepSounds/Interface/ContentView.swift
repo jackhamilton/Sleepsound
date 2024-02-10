@@ -12,7 +12,7 @@ import AVFAudio
 struct ContentView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    var shutoffTime: Time
+    @State var shutoffTime: Time
     @State var displayingTimePicker: Bool = false
     @State var activeID: UUID = UUID()
     @State var tiles: [PackedTile]
@@ -34,7 +34,7 @@ struct ContentView: View {
     ])
     
     init() {
-        self.shutoffTime = Time(timeInterval: UserDefaults.standard.value(forKey: UserDefaultsDoubleKeys.ShutoffTimerDuration.rawValue) as? Double ?? 3600)
+        _shutoffTime = State(initialValue: Time(timeInterval: UserDefaults.standard.value(forKey: UserDefaultsDoubleKeys.ShutoffTimerDuration.rawValue) as? Double ?? 3600))
         
         var loadedPackedTiles: [PackedTile] = []
         if let packedTilesData = UserDefaults.standard.value(forKey: UserDefaultsDataKeys.PresetConfiguration.rawValue) as? Data {
@@ -48,28 +48,28 @@ struct ContentView: View {
         }
         let defaultTiles = [
             PackedTile(title: "Light Rain", resources: [
-                SoundResource(text: "Rain", icon: "cloud.drizzle", soundName: "rain_session", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+                SoundResource(text: "Rain", icon: "cloud.drizzle", soundName: "lightrain", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 10))
             ]),
             PackedTile(title: "Medium Rain", resources: [
                 SoundResource(text: "Rain", icon: "cloud.rain", soundName: "lightrain_small", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 10))
             ]),
             PackedTile(title: "Heavy Rain", resources: [
-                SoundResource(text: "Rain", icon: "cloud.heavyrain", soundName: "lightrain", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+                SoundResource(text: "Rain", icon: "cloud.heavyrain", soundName: "rain_session", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 10))
             ]),
             PackedTile(title: "Airplane", resources: [
                 SoundResource(text: "Plane", icon: "airplane", soundName: "airplane_ambience", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 5))
             ]),
             PackedTile(title: "Fan", resources: [
-                SoundResource(text: "Rain", icon: "fan", soundName: "electricfan", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+                SoundResource(text: "Rain", icon: "fan", soundName: "industrialfan", volume: Volume(percentVolume: 100)),
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 10))
             ]),
             PackedTile(title: "Restaurant", resources: [
                 SoundResource(text: "Rain", icon: "cup.and.saucer", soundName: "restaurant", volume: Volume(percentVolume: 100)),
-                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 20))
+                SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "pinknoise", volume: Volume(percentVolume: 5))
             ])
         ]
         let mergedTiles: [PackedTile] = defaultTiles.map({ tile in
@@ -114,7 +114,7 @@ struct ContentView: View {
                 }
             }
             .sheet(isPresented: $displayingTimePicker) {
-                TimePicker(selectedTime: shutoffTime)
+                TimePicker(selectedTime: $shutoffTime)
                     .presentationDetents([.fraction(0.99), .medium])
             }
             .background(Theme.background)

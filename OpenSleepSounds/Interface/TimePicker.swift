@@ -13,10 +13,12 @@ struct TimePicker: View {
     
     var preservedStartOfDay: Date
     @State var date: Date
+    @Binding var selectedTime: Time
     
-    init(selectedTime: Time) {
+    init(selectedTime: Binding<Time>) {
+        _selectedTime = selectedTime
         preservedStartOfDay = Calendar.current.startOfDay(for: Date())
-        _date = State(initialValue: preservedStartOfDay.addingTimeInterval(selectedTime.timeInterval()))
+        _date = State(initialValue: preservedStartOfDay.addingTimeInterval(selectedTime.wrappedValue.timeInterval()))
     }
 
     var body: some View {
@@ -40,6 +42,7 @@ struct TimePicker: View {
                 Button("Confirm") {
                     let updatedTime = date.timeIntervalSinceReferenceDate - preservedStartOfDay.timeIntervalSinceReferenceDate
                     UserDefaults.standard.setValue(Double(updatedTime), forKey: UserDefaultsDoubleKeys.ShutoffTimerDuration.rawValue)
+                    selectedTime = Time(timeInterval: updatedTime)
                     dismiss()
                 }
                 .foregroundColor(Theme.action)
@@ -50,6 +53,14 @@ struct TimePicker: View {
     }
 }
 
+struct TimePickerPreview: View {
+    @State var selectedTime: Time = Time(hours: 1, minutes: 0, seconds: 0)
+    
+    var body: some View {
+        TimePicker(selectedTime: $selectedTime)
+    }
+}
+
 #Preview {
-    TimePicker(selectedTime: Time(hours: 1, minutes: 0, seconds: 0))
+    TimePickerPreview()
 }
