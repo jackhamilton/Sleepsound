@@ -7,6 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E0123F012B772E9E004690DB /* airplane_ambience.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EF52B772E9E004690DB /* airplane_ambience.wav */; };
+		E0123F022B772E9E004690DB /* mediumrain.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EF62B772E9E004690DB /* mediumrain.wav */; };
+		E0123F032B772E9E004690DB /* rain_session.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EF72B772E9E004690DB /* rain_session.wav */; };
+		E0123F042B772E9E004690DB /* ruido_whitenoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EF82B772E9E004690DB /* ruido_whitenoise.wav */; };
+		E0123F052B772E9E004690DB /* whitenoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EF92B772E9E004690DB /* whitenoise.wav */; };
+		E0123F062B772E9E004690DB /* lightrain_small.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFA2B772E9E004690DB /* lightrain_small.wav */; };
+		E0123F072B772E9E004690DB /* pinknoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFB2B772E9E004690DB /* pinknoise.wav */; };
+		E0123F082B772E9E004690DB /* brownnoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFC2B772E9E004690DB /* brownnoise.wav */; };
+		E0123F092B772E9E004690DB /* electricfan.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFD2B772E9E004690DB /* electricfan.wav */; };
+		E0123F0A2B772E9E004690DB /* restaurant.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFE2B772E9E004690DB /* restaurant.wav */; };
+		E0123F0B2B772E9E004690DB /* lightrain.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123EFF2B772E9E004690DB /* lightrain.wav */; };
+		E0123F0C2B772E9E004690DB /* industrialfan.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0123F002B772E9E004690DB /* industrialfan.wav */; };
 		E01BBE0C2B62FCC80040A30C /* SoundManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BBE0B2B62FCC80040A30C /* SoundManager.swift */; };
 		E01BBE0F2B62FFA80040A30C /* SoundResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BBE0E2B62FFA80040A30C /* SoundResource.swift */; };
 		E01BBE112B62FFB20040A30C /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = E01BBE102B62FFB20040A30C /* Volume.swift */; };
@@ -14,8 +26,6 @@
 		E06F83582B633EC4004A1F6F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F83572B633EC4004A1F6F /* UserDefaults.swift */; };
 		E0884A862B61F88C008F3829 /* SoundLevelTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0884A852B61F88C008F3829 /* SoundLevelTile.swift */; };
 		E0884A892B61FFD8008F3829 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = E0884A882B61FFD8008F3829 /* SwiftySound */; };
-		E0884A8D2B6200B9008F3829 /* rain_session_vibe_crc.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0884A8B2B6200B9008F3829 /* rain_session_vibe_crc.wav */; };
-		E0884A8E2B6200B9008F3829 /* ruido_whitenoise.wav in Resources */ = {isa = PBXBuildFile; fileRef = E0884A8C2B6200B9008F3829 /* ruido_whitenoise.wav */; };
 		E0D32A992B61B9A3001E6A16 /* OpenSleepSoundsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32A982B61B9A3001E6A16 /* OpenSleepSoundsApp.swift */; };
 		E0D32A9B2B61B9A3001E6A16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32A9A2B61B9A3001E6A16 /* ContentView.swift */; };
 		E0D32A9F2B61B9A7001E6A16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D32A9E2B61B9A7001E6A16 /* Assets.xcassets */; };
@@ -46,14 +56,24 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E0123EF52B772E9E004690DB /* airplane_ambience.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = airplane_ambience.wav; sourceTree = "<group>"; };
+		E0123EF62B772E9E004690DB /* mediumrain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = mediumrain.wav; sourceTree = "<group>"; };
+		E0123EF72B772E9E004690DB /* rain_session.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain_session.wav; sourceTree = "<group>"; };
+		E0123EF82B772E9E004690DB /* ruido_whitenoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ruido_whitenoise.wav; sourceTree = "<group>"; };
+		E0123EF92B772E9E004690DB /* whitenoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = whitenoise.wav; sourceTree = "<group>"; };
+		E0123EFA2B772E9E004690DB /* lightrain_small.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lightrain_small.wav; sourceTree = "<group>"; };
+		E0123EFB2B772E9E004690DB /* pinknoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = pinknoise.wav; sourceTree = "<group>"; };
+		E0123EFC2B772E9E004690DB /* brownnoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = brownnoise.wav; sourceTree = "<group>"; };
+		E0123EFD2B772E9E004690DB /* electricfan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = electricfan.wav; sourceTree = "<group>"; };
+		E0123EFE2B772E9E004690DB /* restaurant.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = restaurant.wav; sourceTree = "<group>"; };
+		E0123EFF2B772E9E004690DB /* lightrain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lightrain.wav; sourceTree = "<group>"; };
+		E0123F002B772E9E004690DB /* industrialfan.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = industrialfan.wav; sourceTree = "<group>"; };
 		E01BBE0B2B62FCC80040A30C /* SoundManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundManager.swift; sourceTree = "<group>"; };
 		E01BBE0E2B62FFA80040A30C /* SoundResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundResource.swift; sourceTree = "<group>"; };
 		E01BBE102B62FFB20040A30C /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
 		E01BBE162B631D620040A30C /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		E06F83572B633EC4004A1F6F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E0884A852B61F88C008F3829 /* SoundLevelTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLevelTile.swift; sourceTree = "<group>"; };
-		E0884A8B2B6200B9008F3829 /* rain_session_vibe_crc.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = rain_session_vibe_crc.wav; sourceTree = "<group>"; };
-		E0884A8C2B6200B9008F3829 /* ruido_whitenoise.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ruido_whitenoise.wav; sourceTree = "<group>"; };
 		E0D32A952B61B9A3001E6A16 /* OpenSleepSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSleepSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D32A982B61B9A3001E6A16 /* OpenSleepSoundsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSleepSoundsApp.swift; sourceTree = "<group>"; };
 		E0D32A9A2B61B9A3001E6A16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -141,8 +161,18 @@
 		E0884A8A2B6200A5008F3829 /* SoundFiles */ = {
 			isa = PBXGroup;
 			children = (
-				E0884A8B2B6200B9008F3829 /* rain_session_vibe_crc.wav */,
-				E0884A8C2B6200B9008F3829 /* ruido_whitenoise.wav */,
+				E0123EF52B772E9E004690DB /* airplane_ambience.wav */,
+				E0123EFC2B772E9E004690DB /* brownnoise.wav */,
+				E0123EFD2B772E9E004690DB /* electricfan.wav */,
+				E0123F002B772E9E004690DB /* industrialfan.wav */,
+				E0123EFA2B772E9E004690DB /* lightrain_small.wav */,
+				E0123EFF2B772E9E004690DB /* lightrain.wav */,
+				E0123EF62B772E9E004690DB /* mediumrain.wav */,
+				E0123EFB2B772E9E004690DB /* pinknoise.wav */,
+				E0123EF72B772E9E004690DB /* rain_session.wav */,
+				E0123EFE2B772E9E004690DB /* restaurant.wav */,
+				E0123EF82B772E9E004690DB /* ruido_whitenoise.wav */,
+				E0123EF92B772E9E004690DB /* whitenoise.wav */,
 			);
 			path = SoundFiles;
 			sourceTree = "<group>";
@@ -316,10 +346,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0123F032B772E9E004690DB /* rain_session.wav in Resources */,
+				E0123F092B772E9E004690DB /* electricfan.wav in Resources */,
+				E0123F062B772E9E004690DB /* lightrain_small.wav in Resources */,
+				E0123F0B2B772E9E004690DB /* lightrain.wav in Resources */,
+				E0123F082B772E9E004690DB /* brownnoise.wav in Resources */,
+				E0123F072B772E9E004690DB /* pinknoise.wav in Resources */,
+				E0123F052B772E9E004690DB /* whitenoise.wav in Resources */,
+				E0123F012B772E9E004690DB /* airplane_ambience.wav in Resources */,
+				E0123F022B772E9E004690DB /* mediumrain.wav in Resources */,
+				E0123F042B772E9E004690DB /* ruido_whitenoise.wav in Resources */,
 				E0D32AA32B61B9A7001E6A16 /* Preview Assets.xcassets in Resources */,
 				E0D32A9F2B61B9A7001E6A16 /* Assets.xcassets in Resources */,
-				E0884A8E2B6200B9008F3829 /* ruido_whitenoise.wav in Resources */,
-				E0884A8D2B6200B9008F3829 /* rain_session_vibe_crc.wav in Resources */,
+				E0123F0A2B772E9E004690DB /* restaurant.wav in Resources */,
+				E0123F0C2B772E9E004690DB /* industrialfan.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,10 +553,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OpenSleepSounds/Bundle/OpenSleepSounds.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OpenSleepSounds/Bundle/Preview Content\"";
-				DEVELOPMENT_TEAM = VQGZ978Q6B;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VQGZ978Q6B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -537,8 +578,10 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.LiveLedger.OpenSleepSounds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.sleepsounds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.hamilton.sleepsounds";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -554,10 +597,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = OpenSleepSounds/Bundle/OpenSleepSounds.entitlements;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"OpenSleepSounds/Bundle/Preview Content\"";
-				DEVELOPMENT_TEAM = VQGZ978Q6B;
+				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = VQGZ978Q6B;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -578,8 +622,10 @@
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.LiveLedger.OpenSleepSounds;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hamilton.sleepsounds;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = "match Development com.hamilton.sleepsounds";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
