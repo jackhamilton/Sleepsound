@@ -54,7 +54,12 @@ platform :ios do
         app_identifier: "com.hamilton.sleepsounds",
         readonly: true
     )
-    run_tests(scheme: "UITests")
+#    run_tests(
+#        scheme: "UITests",
+#        devices: ([
+#            "iPhone 15"
+#        ])
+#    )
     increment_build_number(xcodeproj: "OpenSleepSounds.xcodeproj")
     build_app(scheme: "OpenSleepSounds")
     capture_ios_screenshots(

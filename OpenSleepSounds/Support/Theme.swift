@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 class Theme {
+    static var timer = Color(hex: "1D1D1D")
     static var foreground = Color(hex: "2D2D2D")
     static var background = Color(hex: "3D3D3D")
     static var text = Color(hex: "FFFFFF")

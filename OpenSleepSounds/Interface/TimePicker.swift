@@ -23,7 +23,7 @@ struct TimePicker: View {
 
     var body: some View {
         ZStack {
-            Theme.foreground.edgesIgnoringSafeArea(.all)
+            Theme.timer.edgesIgnoringSafeArea(.all)
             VStack {
                 Text("Set Sleep Timer Length")
                     .font(.title2)
