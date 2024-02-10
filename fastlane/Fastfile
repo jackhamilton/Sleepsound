@@ -53,7 +53,8 @@ platform :ios do
         type: "appstore",
         app_identifier: "com.hamilton.sleepsounds",
         readonly: true
-    ) 
+    )
+    run_tests(scheme: "UITests")
     increment_build_number(xcodeproj: "OpenSleepSounds.xcodeproj")
     build_app(scheme: "OpenSleepSounds")
     capture_ios_screenshots(

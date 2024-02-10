@@ -26,28 +26,16 @@ final class OpenSleepSoundsUITests: XCTestCase {
         let app = XCUIApplication()
         snapshot("00-Home")
         
-        let elementsQuery = app.scrollViews.otherElements
-        elementsQuery.buttons["Go Down"].tap()
-        
-        let playButton = elementsQuery.buttons["Play"]
-        playButton.tap()
+        let scrollViewsQuery = XCUIApplication().scrollViews
+        let lightRainElementsQuery = scrollViewsQuery.otherElements.containing(.staticText, identifier:"Light Rain")
+        lightRainElementsQuery.children(matching: .button).matching(identifier: "Go Down").element(boundBy: 0).tap()
+        lightRainElementsQuery.children(matching: .button).matching(identifier: "Play").element(boundBy: 0).tap()
         snapshot("01-MainScreen")
         
-        let stopButton = elementsQuery.buttons["Stop"]
-        stopButton.tap()
-        
+        scrollViewsQuery.otherElements.buttons["Stop"].tap()
         let clockButton = app.navigationBars["_TtGC7SwiftUI32NavigationStackHosting"]/*@START_MENU_TOKEN@*/.buttons["Clock"]/*[[".otherElements[\"Clock\"].buttons[\"Clock\"]",".buttons[\"Clock\"]"],[[[-1,1],[-1,0]]],[0]]@END_MENU_TOKEN@*/
         clockButton.tap()
         snapshot("02-Timer")
-    }
-
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, watchOS 7.0, *) {
-            // This measures how long it takes to launch your application.
-                        measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
     }
 }
 

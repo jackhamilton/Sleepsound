@@ -31,29 +31,13 @@ Get certificates
 
 Generate certificates
 
-### ios deploy
-
-```sh
-[bundle exec] fastlane ios deploy
-```
-
-deploy
-
-### ios upload_screenshots
-
-```sh
-[bundle exec] fastlane ios upload_screenshots
-```
-
-upload_screenshots
-
 ### ios release
 
 ```sh
 [bundle exec] fastlane ios release
 ```
 
-Push a new release build to the App Store
+release
 
 ----
 
