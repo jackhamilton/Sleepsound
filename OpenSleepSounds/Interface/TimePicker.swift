@@ -22,34 +22,43 @@ struct TimePicker: View {
     }
 
     var body: some View {
-        ZStack {
-            Theme.timer.edgesIgnoringSafeArea(.all)
-            VStack {
-                Text("Set Sleep Timer Length")
-                    .font(.title2)
-                    .foregroundStyle(Theme.text)
-                
-                DatePicker(
-                    "",
-                    selection: $date,
-                    displayedComponents: [.hourAndMinute]
-                )
-                .colorScheme(.dark)
-                .labelsHidden()
-                .environment(\.locale, Locale(identifier: "ru"))
-                .datePickerStyle(.wheel)
-                
-                Button("Confirm") {
-                    let updatedTime = date.timeIntervalSinceReferenceDate - preservedStartOfDay.timeIntervalSinceReferenceDate
-                    UserDefaults.standard.setValue(Double(updatedTime), forKey: UserDefaultsDoubleKeys.ShutoffTimerDuration.rawValue)
-                    selectedTime = Time(timeInterval: updatedTime)
-                    dismiss()
-                }
-                .foregroundColor(Theme.action)
-                .padding()
+        VStack {
+            Text("Sleep Timer Length")
+                .font(.title3)
+                .foregroundStyle(Theme.glassText)
+            
+            DatePicker(
+                "",
+                selection: $date,
+                displayedComponents: [.hourAndMinute]
+            )
+            .colorScheme(.light)
+            .labelsHidden()
+            .environment(\.locale, Locale(identifier: "ru"))
+            .datePickerStyle(.wheel)
+            
+            if #available(iOS 26.0, *) {
+                button
+                    .glassEffect()
+            } else {
+                button
+                    .padding(6)
+                    .buttonStyle(.bordered)
             }
         }
-        
+    }
+    
+    var button: some View {
+        Button(action: {
+            let updatedTime = date.timeIntervalSinceReferenceDate - preservedStartOfDay.timeIntervalSinceReferenceDate
+            UserDefaults.standard.setValue(Double(updatedTime), forKey: UserDefaultsDoubleKeys.ShutoffTimerDuration.rawValue)
+            selectedTime = Time(timeInterval: updatedTime)
+            dismiss()
+        }, label: {
+            Text("Confirm")
+        })
+        .foregroundColor(Theme.glassAction)
+        .padding()
     }
 }
 

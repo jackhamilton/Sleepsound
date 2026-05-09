@@ -28,6 +28,9 @@
 		E06F83582B633EC4004A1F6F /* UserDefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = E06F83572B633EC4004A1F6F /* UserDefaults.swift */; };
 		E0884A862B61F88C008F3829 /* SoundLevelTile.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0884A852B61F88C008F3829 /* SoundLevelTile.swift */; };
 		E0884A892B61FFD8008F3829 /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = E0884A882B61FFD8008F3829 /* SwiftySound */; };
+		E0D1DE362FAEEC420082FF9E /* ContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1DE352FAEEC3E0082FF9E /* ContentViewModel.swift */; };
+		E0D1DE392FAF07020082FF9E /* SoundPresetTilePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1DE382FAF06FE0082FF9E /* SoundPresetTilePreview.swift */; };
+		E0D1DE3B2FAF07610082FF9E /* SoundPresetTileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D1DE3A2FAF075C0082FF9E /* SoundPresetTileViewModel.swift */; };
 		E0D32A992B61B9A3001E6A16 /* OpenSleepSoundsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32A982B61B9A3001E6A16 /* OpenSleepSoundsApp.swift */; };
 		E0D32A9B2B61B9A3001E6A16 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0D32A9A2B61B9A3001E6A16 /* ContentView.swift */; };
 		E0D32A9F2B61B9A7001E6A16 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E0D32A9E2B61B9A7001E6A16 /* Assets.xcassets */; };
@@ -85,6 +88,9 @@
 		E01BBE162B631D620040A30C /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		E06F83572B633EC4004A1F6F /* UserDefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaults.swift; sourceTree = "<group>"; };
 		E0884A852B61F88C008F3829 /* SoundLevelTile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundLevelTile.swift; sourceTree = "<group>"; };
+		E0D1DE352FAEEC3E0082FF9E /* ContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewModel.swift; sourceTree = "<group>"; };
+		E0D1DE382FAF06FE0082FF9E /* SoundPresetTilePreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPresetTilePreview.swift; sourceTree = "<group>"; };
+		E0D1DE3A2FAF075C0082FF9E /* SoundPresetTileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundPresetTileViewModel.swift; sourceTree = "<group>"; };
 		E0D32A952B61B9A3001E6A16 /* OpenSleepSounds.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OpenSleepSounds.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0D32A982B61B9A3001E6A16 /* OpenSleepSoundsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSleepSoundsApp.swift; sourceTree = "<group>"; };
 		E0D32A9A2B61B9A3001E6A16 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -147,8 +153,11 @@
 		E01BBE132B6300040040A30C /* Interface */ = {
 			isa = PBXGroup;
 			children = (
+				E0D1DE372FAF06F80082FF9E /* Preview */,
 				E0D32A9A2B61B9A3001E6A16 /* ContentView.swift */,
+				E0D1DE352FAEEC3E0082FF9E /* ContentViewModel.swift */,
 				E0D32AC52B61CB88001E6A16 /* SoundPresetTile.swift */,
+				E0D1DE3A2FAF075C0082FF9E /* SoundPresetTileViewModel.swift */,
 				E0884A852B61F88C008F3829 /* SoundLevelTile.swift */,
 				E01BBE162B631D620040A30C /* TimePicker.swift */,
 			);
@@ -192,6 +201,14 @@
 				E0123EF92B772E9E004690DB /* whitenoise.wav */,
 			);
 			path = SoundFiles;
+			sourceTree = "<group>";
+		};
+		E0D1DE372FAF06F80082FF9E /* Preview */ = {
+			isa = PBXGroup;
+			children = (
+				E0D1DE382FAF06FE0082FF9E /* SoundPresetTilePreview.swift */,
+			);
+			path = Preview;
 			sourceTree = "<group>";
 		};
 		E0D32A8C2B61B9A3001E6A16 = {
@@ -447,9 +464,12 @@
 				E0D32A9B2B61B9A3001E6A16 /* ContentView.swift in Sources */,
 				E06F83582B633EC4004A1F6F /* UserDefaults.swift in Sources */,
 				E0D32ACC2B61DE39001E6A16 /* Timer.swift in Sources */,
+				E0D1DE3B2FAF07610082FF9E /* SoundPresetTileViewModel.swift in Sources */,
 				E0D32AC82B61CE1D001E6A16 /* Theme.swift in Sources */,
 				E0D32AC62B61CB88001E6A16 /* SoundPresetTile.swift in Sources */,
+				E0D1DE392FAF07020082FF9E /* SoundPresetTilePreview.swift in Sources */,
 				E0884A862B61F88C008F3829 /* SoundLevelTile.swift in Sources */,
+				E0D1DE362FAEEC420082FF9E /* ContentViewModel.swift in Sources */,
 				E01BBE112B62FFB20040A30C /* Volume.swift in Sources */,
 				E0D32A992B61B9A3001E6A16 /* OpenSleepSoundsApp.swift in Sources */,
 				E01BBE0C2B62FCC80040A30C /* SoundManager.swift in Sources */,

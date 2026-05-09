@@ -8,15 +8,15 @@
 import Foundation
 import SwiftUI
 
-struct SoundResource: Identifiable, Codable {
-    var id = UUID()
-    
+public struct SoundResource: Identifiable, Codable {
+    public var id = UUID()
+
     let text: String
     let icon: String?
     let soundName: String
-    //out of 100
+    // out of 100
     var volume: Volume
-    
+
     init(text: String, icon: String? = nil, soundName: String, volume: Volume) {
         self.text = text
         self.icon = icon
@@ -25,13 +25,13 @@ struct SoundResource: Identifiable, Codable {
     }
 }
 
-struct PackedTile: Codable, Identifiable {
-    var id = UUID()
-    
+public struct PackedTile: Codable, Identifiable {
+    public var id = UUID()
+
     var title: String
     var icon: String?
     var resources: [SoundResource]
-    
+
     init(title: String, icon: String? = nil, resources: [SoundResource]) {
         self.title = title
         self.icon = icon
@@ -39,7 +39,8 @@ struct PackedTile: Codable, Identifiable {
     }
 }
 
-struct SoundFile: Identifiable {
-    var id = UUID()
+public struct SoundFile: Identifiable {
+    public var id = UUID()
+
     let filename: String
 }

@@ -11,14 +11,20 @@ import Combine
 
 struct SoundLevelTile: View {
     var sound: SoundResource
+    var soundManager: SoundManager
     var volumePublisher: PassthroughSubject<(String, Volume), Never>?
+    
     @State var volume: Volume
     @Binding var active: Bool
     
-    init(sound: SoundResource, active: Binding<Bool>, volumePublisher: PassthroughSubject<(String, Volume), Never>? = nil) {
+    init(sound: SoundResource,
+         soundManager: SoundManager,
+         active: Binding<Bool>,
+         volumePublisher: PassthroughSubject<(String, Volume), Never>? = nil) {
         self.sound = sound
-        _volume = State(initialValue: sound.volume)
-        _active = active
+        self.soundManager = soundManager
+        self.volume = sound.volume
+        self._active = active
         self.volumePublisher = volumePublisher
     }
     
@@ -36,19 +42,12 @@ struct SoundLevelTile: View {
                     .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
             }
             
-//            Slider(value: $sound.volume.rawValue, in: 0...1)
-//                .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
-//                .onChange(of: sound.volume, {
-//                    if active {
-//                        ContentView.soundManager.updateVolume(soundName: sound.soundName, volume: sound.volume)
-//                    }
-//                })
             Slider(value: $volume.rawValue)
                 .padding(EdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5))
                 .onChange(of: volume, {
                     volumePublisher?.send((sound.soundName, volume))
                     if active {
-                        ContentView.soundManager.updateVolume(soundName: sound.soundName, volume: volume)
+                        soundManager.updateVolume(soundName: sound.soundName, volume: volume)
                     }
                 })
             
@@ -69,7 +68,9 @@ struct LevelTilePreviewView: View {
         ZStack {
             Theme.background
                 .ignoresSafeArea()
-            SoundLevelTile(sound: sound, active: $active)
+            SoundLevelTile(sound: sound,
+                           soundManager: SoundManager(sounds: []),
+                           active: $active)
         }
     }
 }

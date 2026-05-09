@@ -9,171 +9,133 @@ import SwiftUI
 import SwiftySound
 import Combine
 
-struct SoundPresetTile: View, Identifiable, Equatable {
-    //Not using this as source of truth since saving it could create issues
-    var id = UUID()
-    static func == (lhs: SoundPresetTile, rhs: SoundPresetTile) -> Bool {
-        if lhs.data.title == rhs.data.title {
-            return true
-        }
-        return false
+struct SoundPresetTile: View, Identifiable {
+    var id: UUID {
+        return viewModel.id
     }
     
-    //Source of truth
-    @Binding var data: PackedTile
-    public let volumePublisher = PassthroughSubject<(String, Volume), Never>()
-    
-    let dateFormatter: DateFormatter
-    let swapActiveCallback: (UUID) -> Void
-    
     @Binding var activeUUID: UUID
-    @State var isActive: Bool
-    @State var timerText: String = ""
-    @State var expanded: Bool = false
-    @State var playing: Bool = false
-    @State var shutoffTimer: ShutoffTimer
+    @State var isActive = false
+    @State var expanded = false
+    
+    @ObservedObject var viewModel: SoundPresetTileViewModel
+    @ObservedObject var shutoffTimer = ShutoffTimer()
+    
     let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    init(data: Binding<PackedTile>,
+         active: Binding<UUID>,
+         soundManager: SoundManager,
+         swapActiveCallback: @escaping (UUID) -> Void) {
+        self.viewModel = SoundPresetTileViewModel(data: data,
+                                                  soundManager: soundManager,
+                                                  swapActiveCallback: swapActiveCallback)
 
-    init(data: Binding<PackedTile>, active: Binding<UUID>, swapActiveCallback: @escaping (UUID) -> Void) {
-        self.dateFormatter = DateFormatter()
-        self.dateFormatter.dateFormat = "hh:mm:ss"
-        self.swapActiveCallback = swapActiveCallback
-        _data = data
         _activeUUID = active
-        _isActive = State(initialValue: false)
-        _shutoffTimer = State(initialValue: ShutoffTimer())
     }
     
     var body: some View {
         VStack {
             HStack(alignment: .center, spacing: .leastNonzeroMagnitude, content: {
-                if let icon = self.data.icon {
-                    Image(systemName: icon)
-                        .colorInvert()
-                        .padding(EdgeInsets(top: 5, leading: 15, bottom: 5, trailing: 5))
+                if let icon = viewModel.data.icon {
+                    imageIcon(systemName: icon)
+                        .padding(.leading, 15)
+                        .padding(.trailing, 5)
                 }
-                Text(data.title)
+                Text(viewModel.data.title)
                     .foregroundStyle(Theme.text)
                     .font(.title2)
                     .padding(5)
+                
                 Spacer()
-                if playing && isActive {
-                    Text(timerText)
-                        .foregroundStyle(Theme.text)
-                        .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5))
-                        .onReceive(timer, perform: { _ in
-                            shutoffTimer.tick()
-                            timerText = shutoffTimer.text()
-                        })
-                    Button(action: {
-                        stop()
-                    }, label: {
-                        Image(systemName: "stop.fill")
-                            .foregroundColor(.white)
-                            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 15))
-                    })
-                } else {
-                    Button(action: {
-                        play()
-                    }, label: {
-                        Image(systemName: "play.fill")
-                            .foregroundColor(.white)
-                            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 15))
-                    })
-                }
-                Button(action: {
-                    toggleExpand()
-                }, label: {
-                    if expanded {
-                        Image(systemName: "chevron.up")
-                            .foregroundColor(Theme.text)
-                            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 15))
-                    } else {
-                        Image(systemName: "chevron.down")
-                            .foregroundColor(Theme.text)
-                            .padding(EdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 15))
-                    }
-                })
+                
+                playControls
+                expando
             })
-            .background(Theme.foreground)
             .frame(maxWidth: UIScreen.main.bounds.width)
             .scaledToFit()
             
             if expanded {
-                ForEach($data.resources) { sound in
-                    SoundLevelTile(sound: sound.wrappedValue, active: $isActive, volumePublisher: volumePublisher)
-                        .onReceive(volumePublisher, perform: { name, volume in
-                            if let updateIndex = data.resources.firstIndex(where: { $0.soundName == name }) {
-                                data.resources[updateIndex].volume = volume
-                            }
-                        })
+                ForEach($viewModel.data.resources) { sound in
+                    SoundLevelTile(sound: sound.wrappedValue,
+                                   soundManager: viewModel.soundManager,
+                                   active: $isActive,
+                                   volumePublisher: viewModel.volumePublisher)
+                    .onReceive(viewModel.volumePublisher, perform: { name, volume in
+                        if let updateIndex = viewModel.data.resources.firstIndex(where: { $0.soundName == name }) {
+                            viewModel.data.resources[updateIndex].volume = volume
+                        }
+                    })
                 }
             }
         }
         .padding()
-        .background(Theme.foreground)
+        .background(Material.regular)
+        .cornerRadius(24)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 6)
         .onChange(of: activeUUID, {
             isActive = activeUUID == id
         })
+        .animation(.bouncy, value: expanded)
     }
     
-    func play() {
-        swapActiveCallback(id)
-        clearActiveSounds()
-        self.shutoffTimer = ShutoffTimer(completion: {
-            stop()
-        })
-        playing = true
-        timerText = shutoffTimer.text()
-        shutoffTimer.completion = {
-            stop()
+    func imageIcon(systemName: String, color: Color = Theme.text) -> some View {
+        Image(systemName: systemName)
+            .foregroundColor(color)
+            .padding(.vertical, 5)
+    }
+    
+    @ViewBuilder
+    var playControls: some View {
+        if viewModel.playing && isActive {
+            Text(shutoffTimer.associatedText)
+                .foregroundStyle(Theme.text)
+                .padding(5)
+                .onReceive(timer, perform: { _ in
+                    shutoffTimer.tick()
+                })
+                .transition(.push(from: .top))
+            Button(action: {
+                viewModel.stop()
+            }, label: {
+                imageIcon(systemName: "stop.fill", color: Theme.action)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 15)
+                    .transition(.symbolEffect)
+            })
+        } else {
+            Button(action: {
+                shutoffTimer.reset()
+                viewModel.play()
+            }, label: {
+                imageIcon(systemName: "play.fill", color: Theme.action)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 15)
+                    .transition(.symbolEffect)
+            })
         }
-        for sound in data.resources
-        {
-            ContentView.soundManager.playSound(sound.soundName)
-            ContentView.soundManager.updateVolume(soundName: sound.soundName, volume: sound.volume)
-        }
     }
     
-    func stop() {
-        clearActiveSounds()
-        playing = false
-    }
-    
-    func clearActiveSounds() {
-        ContentView.soundManager.stopAll()
-    }
-    
-    func toggleExpand() {
-        expanded = !expanded
-    }
-}
-
-struct PresetTilePreviewView: View {
-    @State var active = UUID()
-    @State var tiles = [
-        PackedTile(title: "Rain", resources: [
-            SoundResource(text: "Rain", icon: "cloud.rain", soundName: "rain_session_vibe_crc", volume: Volume(percentVolume: 100)),
-            SoundResource(text: "Noise", icon: "chart.bar.xaxis", soundName: "ruido_whitenoise", volume: Volume(percentVolume: 20))
-        ])
-    ]
-    
-    var body: some View {
-        ZStack {
-            Theme.background
-                .ignoresSafeArea()
-            ForEach($tiles) { tile in
-                SoundPresetTile(data: tile, active: $active, swapActiveCallback: swapActive)
+    var expando: some View {
+        Button(action: {
+            expanded.toggle()
+        }, label: {
+            if expanded {
+                imageIcon(systemName: "chevron.up", color: Theme.action)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 15)
+                    .transition(.symbolEffect)
+            } else {
+                imageIcon(systemName: "chevron.down", color: Theme.action)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 15)
+                    .transition(.symbolEffect)
             }
-        }
-        .preferredColorScheme(.dark)
-    }
-    
-    func swapActive(id: UUID) {
-        active = id
+        })
     }
 }
 
 #Preview {
-    PresetTilePreviewView()
+    PresetTilePreview()
 }

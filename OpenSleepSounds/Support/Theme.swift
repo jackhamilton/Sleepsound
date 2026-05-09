@@ -12,8 +12,12 @@ class Theme {
     static var timer = Color(hex: "1D1D1D")
     static var foreground = Color(hex: "2D2D2D")
     static var background = Color(hex: "3D3D3D")
+    static var pink = Color(hex: "c1728d")
+    static var purple = Color(hex: "2863ab")
     static var text = Color(hex: "FFFFFF")
-    static var action = Color(hex: "FFA500")
+    static var glassText = Color.black
+    static var action = Color(hex: "b4ecff")
+    static var glassAction = Color(hex: "587680")
 }
         
 extension Color {
