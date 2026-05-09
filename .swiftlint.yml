@@ -81,7 +81,8 @@ type_name:
   allowed_symbols: ["_"]
 identifier_name:
   min_length:
-    error: 4 # only error
+    error: 0 # only error
+    warning: 0
   excluded: # excluded via string array
     - id
     - URL

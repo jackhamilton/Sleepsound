@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1500"
+   LastUpgradeVersion = "2640"
    version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -59,6 +59,28 @@
                BlueprintIdentifier = "E0123F192B777AFA004690DB"
                BuildableName = "Snapshots.xctest"
                BlueprintName = "Snapshots"
+               ReferencedContainer = "container:OpenSleepSounds.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E01AC7DB2FAFE37700DA8B3D"
+               BuildableName = "AppIconCapture.xctest"
+               BlueprintName = "AppIconCapture"
+               ReferencedContainer = "container:OpenSleepSounds.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "E05F43152FAFE8B20083385D"
+               BuildableName = "AppIconCaptureTests.xctest"
+               BlueprintName = "AppIconCaptureTests"
                ReferencedContainer = "container:OpenSleepSounds.xcodeproj">
             </BuildableReference>
          </TestableReference>

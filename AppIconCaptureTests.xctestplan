@@ -1,0 +1,25 @@
+{
+  "configurations" : [
+    {
+      "id" : "1137173C-9720-494A-B5A6-25894185B815",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "performanceAntipatternCheckerEnabled" : true
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:OpenSleepSounds.xcodeproj",
+        "identifier" : "E05F43152FAFE8B20083385D",
+        "name" : "AppIconCaptureTests"
+      }
+    }
+  ],
+  "version" : 1
+}
